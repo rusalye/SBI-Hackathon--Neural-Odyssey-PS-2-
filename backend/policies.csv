@@ -1,0 +1,4 @@
+policyName,policyType,minPremium,coverage,interestRate
+Policy A,Health,1000,50000,0.05
+Policy B,Health,2000,100000,0.04
+Policy C,Life,5000,200000,0.06
