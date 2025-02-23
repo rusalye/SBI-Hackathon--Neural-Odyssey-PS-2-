@@ -1,232 +1,63 @@
-:root {
-  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: #333333; /* Dark gray text for better readability */
-  background-color: #f5f7fa; /* Light gray background */
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* SBI Color Palette */
-:root {
-  --sbi-dark-blue: #004a9f; /* Primary dark blue */
-  --sbi-medium-blue: #0073e6; /* Medium blue for accents */
-  --sbi-light-blue: #e6f2ff; /* Light blue for backgrounds */
-  --sbi-white: #ffffff; /* White for containers */
-  --sbi-gray: #f5f7fa; /* Light gray for backgrounds */
-  --sbi-dark-gray: #333333; /* Dark gray for text */
-}
-
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: var(--sbi-gray);
+/* src/Recommendations.module.css */
+.container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px; /* Limit the width for better alignment */
+  margin: 20px auto; /* Center the container */
+  text-align: center;
 }
 
 h1 {
-  font-size: 2.5rem;
-  line-height: 1.2;
-  color: var(--sbi-dark-blue); /* SBI dark blue for headings */
-  margin-bottom: 1.5rem;
-  font-weight: 600;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
 }
 
-h2 {
-  font-size: 2rem;
-  color: var(--sbi-dark-blue);
-  margin-bottom: 1.25rem;
-  font-weight: 600;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Add spacing between form groups */
 }
 
-h3 {
-  font-size: 1.5rem;
-  color: var(--sbi-dark-blue);
-  margin-bottom: 1rem;
-  font-weight: 600;
-}
-
-p {
-  font-size: 1rem;
-  color: var(--sbi-dark-gray);
-  line-height: 1.6;
-}
-
-/* Buttons */
-button {
-  border-radius: 8px;
-  border: none;
-  padding: 0.75em 1.5em;
-  font-size: 1em;
-  font-weight: 600;
-  font-family: inherit;
-  background-color: var(--sbi-dark-blue); /* SBI dark blue */
-  color: var(--sbi-white); /* White text */
-  cursor: pointer;
-  transition: background-color 0.25s, transform 0.25s;
-}
-button:hover {
-  background-color: var(--sbi-medium-blue); /* Medium blue on hover */
-  transform: translateY(-2px); /* Slight lift effect */
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto var(--sbi-dark-blue);
-}
-
-/* Form Styling */
-form {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 2rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  background-color: var(--sbi-white);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
 label {
-  font-weight: 500;
-  color: var(--sbi-dark-gray);
-  display: block;
-  margin-bottom: 0.75rem;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-select, .MuiSlider-root {
+input {
   width: 100%;
-  margin-bottom: 1.5rem;
-}
-
-button[type="submit"] {
-  width: 100%;
-  margin-top: 1.5rem;
-  background-color: var(--sbi-dark-blue);
-  color: var(--sbi-white);
-  font-weight: 600;
-}
-
-/* Error Message Styling */
-.text-red-500 {
-  color: #ef4444;
-  font-size: 0.875rem;
-  margin-top: 0.5rem;
-}
-
-/* Graph Container Styling */
-.graph-container {
-  background-color: var(--sbi-white);
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Policy Comparison Styling */
-.policy-comparison {
-  margin-top: 2rem;
-  padding: 1.5rem;
-  background-color: var(--sbi-white);
-  border: 1px solid #e0e0e0;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-.policy-comparison h2 {
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: var(--sbi-dark-blue);
-  margin-bottom: 1.5rem;
-}
-
-.policy-card {
-  padding: 1.5rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  background-color: var(--sbi-white);
-  margin-bottom: 1rem;
-  transition: transform 0.25s, box-shadow 0.25s;
-}
-.policy-card:hover {
-  transform: translateY(-4px); /* Lift effect on hover */
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1); /* Stronger shadow on hover */
-}
-
-.policy-card h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--sbi-dark-blue);
-  margin-bottom: 0.75rem;
-}
-
-.policy-card p {
-  font-size: 0.875rem;
-  color: var(--sbi-dark-gray);
-  margin: 0.5rem 0;
-}
-
-/* Custom Slider Styles */
-.MuiSlider-root {
-  color: var(--sbi-dark-blue); /* SBI dark blue for slider */
-}
-
-.MuiSlider-thumb {
-  width: 20px;
-  height: 20px;
-  background-color: var(--sbi-dark-blue); /* SBI dark blue for thumb */
-  border: 2px solid var(--sbi-white);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.MuiSlider-track {
-  height: 6px;
-  border-radius: 3px;
-}
-
-.MuiSlider-rail {
-  height: 6px;
-  background-color: #e0e0e0; /* Rail color */
-  border-radius: 3px;
-}
-
-.MuiSlider-valueLabel {
-  background-color: var(--sbi-dark-blue); /* SBI dark blue for value label */
-  color: var(--sbi-white); /* White text for value label */
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
   border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 0.875rem;
 }
 
-/* Header Styling */
-.header {
-  background-color: var(--sbi-dark-blue);
-  color: var(--sbi-white);
-  padding: 1rem;
-  text-align: center;
-  border-bottom: 4px solid var(--sbi-medium-blue);
+.button {
+  width: 100%;
+  padding: 10px;
+  background-color: #0073b7;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
 }
 
-.header h1 {
-  color: var(--sbi-white);
-  margin: 0;
+.button:hover {
+  background-color: #005f9e;
 }
 
-/* Footer Styling */
-.footer {
-  background-color: var(--sbi-dark-blue);
-  color: var(--sbi-white);
-  padding: 1rem;
-  text-align: center;
-  margin-top: 2rem;
-  border-top: 4px solid var(--sbi-medium-blue);
-}
-
-.footer p {
-  color: var(--sbi-white);
-  margin: 0;
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
 }

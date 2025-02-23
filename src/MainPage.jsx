@@ -1,3 +1,4 @@
+// src/MainPage.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -37,6 +38,10 @@ const MainPage = () => {
             {/* Add a link to the Insurance Calculator */}
             <li>
               <Link to="/insurance-calculator">Insurance Calculator</Link>
+            </li>
+            {/* Add a link to the Recommendations Page */}
+            <li>
+              <Link to="/recommendations">Policy Recommendations</Link>
             </li>
           </ul>
         </aside>
